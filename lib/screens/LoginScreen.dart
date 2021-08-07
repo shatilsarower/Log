@@ -51,41 +51,17 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              TextInputField(),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 10.0,
-                ),
-                child: Container(
-                  height: 70,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[500]!.withOpacity(0.5),
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: Center(
-                    child: TextField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: 'PassWord',
-                        hintStyle: kBodyText,
-                        prefixIcon: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 20.0,
-                          ),
-                          child: Icon(
-                            FontAwesomeIcons.lock,
-                            size: 28,
-                            color: kWhite,
-                          ),
-                        ),
-                      ),
-                      style: kBodyText,
-                      keyboardType: TextInputType.name,
-                      textInputAction: TextInputAction.done,
-                    ),
-                  ),
-                ),
+              TextInputField(
+                hint: 'Email',
+                inputAction: TextInputAction.done,
+                inputType: TextInputType.name,
+                icon: FontAwesomeIcons.envelope,
+              ),
+              PasswordInput(
+                hint: 'PassWord',
+                inputAction: TextInputAction.done,
+                inputType: TextInputType.name,
+                icon: FontAwesomeIcons.envelope,
               ),
             ],
           ),
@@ -95,11 +71,65 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
+class PasswordInput extends StatelessWidget {
+  const PasswordInput({
+    Key? key,
+    required this.icon,
+    required this.hint,
+    required this.inputType,
+    required this.inputAction,
+  }) : super(key: key);
+  final IconData icon;
+  final String hint;
+  final TextInputType inputType;
+  final TextInputAction inputAction;
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        vertical: 10.0,
+      ),
+      child: Container(
+        height: size.height * 0.08,
+        width: size.width * 0.8,
+        decoration: BoxDecoration(
+          color: Colors.grey[500]!.withOpacity(0.5),
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Center(
+          child: TextField(
+            obscureText: true,
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              hintText: hint,
+              hintStyle: kBodyText,
+              prefixIcon: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20.0,
+                ),
+                child: Icon(
+                  icon,
+                  size: 28,
+                  color: kWhite,
+                ),
+              ),
+            ),
+            style: kBodyText,
+            keyboardType: inputType,
+            textInputAction: inputAction,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class TextInputField extends StatelessWidget {
   const TextInputField({
     Key? key,
-    this.inputAction,
-    this.inputType,
+    required this.inputAction,
+    required this.inputType,
     required this.hint,
     required this.icon,
   }) : super(key: key);
@@ -125,22 +155,22 @@ class TextInputField extends StatelessWidget {
           child: TextField(
             decoration: InputDecoration(
               border: InputBorder.none,
-              hintText: 'Email',
+              hintText: hint,
               hintStyle: kBodyText,
               prefixIcon: Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 20.0,
                 ),
                 child: Icon(
-                  FontAwesomeIcons.envelope,
+                  icon,
                   size: 28,
                   color: kWhite,
                 ),
               ),
             ),
             style: kBodyText,
-            keyboardType: TextInputType.emailAddress,
-            textInputAction: TextInputAction.next,
+            keyboardType: inputType,
+            textInputAction: inputAction,
           ),
         ),
       ),
