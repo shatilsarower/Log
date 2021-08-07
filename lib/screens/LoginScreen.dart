@@ -77,9 +77,26 @@ class LoginScreen extends StatelessWidget {
                     buttonName: 'Login',
                   ),
                   SizedBox(
-                    height: 30.0,
+                    height: 25.0,
                   ),
                 ],
+              ),
+              Container(
+                child: Text(
+                  'Create New Account',
+                  style: kBodyText,
+                ),
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                      width: 1,
+                      color: kWhite,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20.0,
               ),
             ],
           ),
