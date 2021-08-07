@@ -63,10 +63,47 @@ class LoginScreen extends StatelessWidget {
                 inputType: TextInputType.name,
                 icon: FontAwesomeIcons.envelope,
               ),
+              SizedBox(
+                height: 30.0,
+              ),
+              Text('Forgot PassWord?',style: kBodyText,),
+              RoundedButton(buttonName: ,),
+              SizedBox(
+                height: 30.0,
+              ),
             ],
           ),
         ),
       ],
+    );
+  }
+}
+
+class RoundedButton extends StatelessWidget {
+  const RoundedButton({
+    Key? key,
+    required this.buttonName,
+  }) : super(key: key);
+  final String buttonName;
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16.0),
+        color: kBlue,
+      ),
+      height: size.height * 0.08,
+      width: size.width * 0.8,
+      child: TextButton(
+        onPressed: () {},
+        child: Text(
+          'Login',
+          style: kBodyText.copyWith(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
     );
   }
 }
