@@ -52,6 +52,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   TextInputField(
                     hint: 'Email',
@@ -68,14 +69,18 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(
                     height: 30.0,
                   ),
-                  Text('Forgot PassWord?',style: kBodyText,),
-                  RoundedButton(buttonName: ,),
+                  Text(
+                    'Forgot PassWord?',
+                    style: kBodyText,
+                  ),
+                  RoundedButton(
+                    buttonName: 'Login',
+                  ),
                   SizedBox(
                     height: 30.0,
                   ),
                 ],
               ),
-
             ],
           ),
         ),
@@ -103,7 +108,7 @@ class RoundedButton extends StatelessWidget {
       child: TextButton(
         onPressed: () {},
         child: Text(
-          'Login',
+          buttonName,
           style: kBodyText.copyWith(
             fontWeight: FontWeight.bold,
           ),
