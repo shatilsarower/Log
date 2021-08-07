@@ -85,6 +85,40 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10.0,
+                ),
+                child: Container(
+                  height: 70,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[500]!.withOpacity(0.5),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Center(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'PassWord',
+                        hintStyle: kBodyText,
+                        prefixIcon: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 20.0,
+                          ),
+                          child: Icon(
+                            FontAwesomeIcons.lock,
+                            size: 28,
+                            color: kWhite,
+                          ),
+                        ),
+                      ),
+                      style: kBodyText,
+                      keyboardType: TextInputType.name,
+                      textInputAction: TextInputAction.done,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
