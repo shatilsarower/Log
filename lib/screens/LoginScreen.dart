@@ -51,31 +51,37 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                height: 70,
-                decoration: BoxDecoration(
-                  color: Colors.grey[500]!.withOpacity(0.5),
-                  borderRadius: BorderRadius.circular(16),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10.0,
                 ),
-                child: Center(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Email',
-                      hintStyle: kBodyText,
-                      prefixIcon: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20.0,
-                        ),
-                        child: Icon(
-                          FontAwesomeIcons.envelope,
-                          size: 28,
-                          color: kWhite,
+                child: Container(
+                  height: 70,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[500]!.withOpacity(0.5),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Center(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Email',
+                        hintStyle: kBodyText,
+                        prefixIcon: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 20.0,
+                          ),
+                          child: Icon(
+                            FontAwesomeIcons.envelope,
+                            size: 28,
+                            color: kWhite,
+                          ),
                         ),
                       ),
+                      style: kBodyText,
+                      keyboardType: TextInputType.emailAddress,
+                      textInputAction: TextInputAction.next,
                     ),
-                    style: kBodyText,
-                    keyboardType: TextInputType.emailAddress,
                   ),
                 ),
               ),
