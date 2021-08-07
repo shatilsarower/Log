@@ -14,14 +14,14 @@ class LoginScreen extends StatelessWidget {
     return Stack(
       children: [
         ShaderMask(
-          shaderCallback: (rect) => LinearGradient(
+          shaderCallback: (bounds) => LinearGradient(
             begin: Alignment.bottomCenter,
             end: Alignment.center,
             colors: [
               Colors.black,
               Colors.transparent,
             ],
-          ).createShader(rect),
+          ).createShader(bounds),
           blendMode: BlendMode.darken,
           child: Container(
             decoration: BoxDecoration(
