@@ -51,7 +51,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              TextinputField(),
+              TextInputField(),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   vertical: 10.0,
@@ -95,19 +95,28 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
-class TextinputField extends StatelessWidget {
-  const TextinputField({
+class TextInputField extends StatelessWidget {
+  const TextInputField({
     Key? key,
+    this.inputAction,
+    this.inputType,
+    required this.hint,
+    required this.icon,
   }) : super(key: key);
-
+  final IconData icon;
+  final String hint;
+  final TextInputType inputType;
+  final TextInputAction inputAction;
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(
         vertical: 10.0,
       ),
       child: Container(
-        height: 70,
+        height: size.height * 0.08,
+        width: size.width * 0.8,
         decoration: BoxDecoration(
           color: Colors.grey[500]!.withOpacity(0.5),
           borderRadius: BorderRadius.circular(16),
