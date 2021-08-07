@@ -51,26 +51,31 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              TextInputField(
-                hint: 'Email',
-                inputAction: TextInputAction.done,
-                inputType: TextInputType.name,
-                icon: FontAwesomeIcons.envelope,
+              Column(
+                children: [
+                  TextInputField(
+                    hint: 'Email',
+                    inputAction: TextInputAction.done,
+                    inputType: TextInputType.name,
+                    icon: FontAwesomeIcons.envelope,
+                  ),
+                  PasswordInput(
+                    hint: 'PassWord',
+                    inputAction: TextInputAction.done,
+                    inputType: TextInputType.name,
+                    icon: FontAwesomeIcons.envelope,
+                  ),
+                  SizedBox(
+                    height: 30.0,
+                  ),
+                  Text('Forgot PassWord?',style: kBodyText,),
+                  RoundedButton(buttonName: ,),
+                  SizedBox(
+                    height: 30.0,
+                  ),
+                ],
               ),
-              PasswordInput(
-                hint: 'PassWord',
-                inputAction: TextInputAction.done,
-                inputType: TextInputType.name,
-                icon: FontAwesomeIcons.envelope,
-              ),
-              SizedBox(
-                height: 30.0,
-              ),
-              Text('Forgot PassWord?',style: kBodyText,),
-              RoundedButton(buttonName: ,),
-              SizedBox(
-                height: 30.0,
-              ),
+
             ],
           ),
         ),
