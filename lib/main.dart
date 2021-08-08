@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:logsign/screens/ForgotPassword.dart';
 import 'package:logsign/screens/LoginScreen.dart';
 
 void main() {
@@ -17,7 +18,11 @@ class MyApp extends StatelessWidget {
           Theme.of(context).textTheme,
         ),
       ),
-      home: LoginScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => LoginScreen(),
+        'ForgotPassword': (context) => ForgotPassword(),
+      },
     );
   }
 }

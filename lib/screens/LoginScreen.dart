@@ -72,9 +72,12 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(
                     height: 30.0,
                   ),
-                  Text(
-                    'Forgot PassWord?',
-                    style: kBodyText,
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, 'ForgotPassword'),
+                    child: Text(
+                      'Forgot PassWord?',
+                      style: kBodyText,
+                    ),
                   ),
                   RoundedButton(
                     buttonName: 'Login',
