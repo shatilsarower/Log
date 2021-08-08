@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:logsign/pallete.dart';
+import 'package:logsign/widgets/BackgroundImage.dart';
 import 'package:logsign/widgets/PasswordInput.dart';
 import 'package:logsign/widgets/RoundedButton.dart';
 import 'package:logsign/widgets/TextInputField.dart';
@@ -13,30 +14,8 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        ShaderMask(
-          shaderCallback: (bounds) => LinearGradient(
-            begin: Alignment.bottomCenter,
-            end: Alignment.center,
-            colors: [
-              Colors.black,
-              Colors.transparent,
-            ],
-          ).createShader(bounds),
-          blendMode: BlendMode.darken,
-          child: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  'assets/images/login_bg.png',
-                ),
-                fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(
-                  Colors.black54,
-                  BlendMode.darken,
-                ),
-              ),
-            ),
-          ),
+        BackgroundImage(
+          image: 'assets/images/login_bg.png',
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
@@ -73,7 +52,10 @@ class LoginScreen extends StatelessWidget {
                     height: 30.0,
                   ),
                   GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, 'ForgotPassword'),
+                    onTap: () => Navigator.pushNamed(
+                      context,
+                      'ForgotPassword',
+                    ),
                     child: Text(
                       'Forgot PassWord?',
                       style: kBodyText,
